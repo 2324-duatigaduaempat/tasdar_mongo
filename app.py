@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 
 # Sambung MongoDB
@@ -56,5 +56,5 @@ def save_jiwa():
     result = folder_jiwa.insert_one(data)
     return jsonify({"status": "saved", "id": str(result.inserted_id)})
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
