@@ -1,0 +1,1 @@
+function sendMessage() { const message = document.getElementById('userInput').value; fetch('/gpt_reply', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({message}) }).then(res => res.json()).then(data => { document.getElementById('chatbox').innerHTML += '<div>' + data.reply + '</div>'; }); }
